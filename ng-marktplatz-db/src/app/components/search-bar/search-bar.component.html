@@ -1,0 +1,7 @@
+<div class="search-container">
+    <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <span class="logo" routerLink="/">Der MarktPlatz</span>
+        <input class="search-input" name="search" ngModel placeholder="Search the Marketplace">
+        <button class="search-button">Search</button>
+    </form>
+</div>
