@@ -19,3 +19,20 @@
         </div>
     </div>
 </div>
+
+<div>
+    <table id="items">
+        <tr>
+            <th *ngFor="let column of headers">
+                {{ column }}
+            </th>
+        </tr>
+
+        <tr *ngFor="let row of item">
+            <td *ngFor="let column of headers">
+                {{ row }}
+            </td>
+        </tr>
+        
+    </table>
+</div>
