@@ -6,8 +6,7 @@
 
 //For Mat-Form Componenets
 ::ng-deep { 
-    .mat-form-field-infix{ //For changing the background color of the "Sort" selector
-    }
+    
     .mat-select-value, .mat-select-arrow, .mat-form-field-hide-pplaceholder .mat-select-placeholder, .mat-form-field-appearance-legacy .mat-form-field-label{
         color: #ffffff !important;
         opacity: 1;
@@ -40,7 +39,7 @@
 .item{
     width: 280px;
     margin: 10px;
-    height: 330px;
+    height: 300px;
     overflow: hidden;
     border-radius: 5px;
     background-color: #212121;
@@ -54,42 +53,42 @@
         transform: translateY(-3px);
     }
 
-    //For The Thumbnail's Container
-    &-thumb-container{
-        background-color: #000000;
-        position: relative;
-        height: 172px;
-        color: #ffffff;
-        text-align: center;
-    }
 
-    //For The ThumbNail itself
-    &-thumbnail{  
-        position: absolute; 
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        height: 172px;
+    //For The Item's Name
+    &-name{
+        color:#ffffffcc;
+        text-align: left;
+        display: flex;
+        font-weight: 1000;
+        font-size: 22px;
+        font-family: 'Rampart One', cursive;
+        margin-bottom: 20px;
     }
 
     //For The Item's Description
     &-description{
-        padding: 20px;
+        color: #1a81bd;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 800;
+        font-family: 'Edwardian Script ITC';
+        line-height: normal;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        width: 280px;
         height: 157px;
     }
 
-    //For The Item's Name
-    &-name{
-        color:#ffffff;
-        font-weight: 700;
-        font-size: 22px;
-        margin-bottom: 20px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+    //For The Item's Description
+    &-price{
+        color: #00ff228e;
+        padding: 20px;
+        display: flex;
+        text-align:right;
+        font-family: 'Anton', sans-serif;
+        font-size: large;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 280;
+        height: 20px;
     }
 }

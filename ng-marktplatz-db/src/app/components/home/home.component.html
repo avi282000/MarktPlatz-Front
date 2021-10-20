@@ -1,38 +1,24 @@
-<div class="filters">
-    <mat-form-field>
-        <mat-label>Sort</mat-label>
-        <mat-select panelClass="sort-select" [(ngModel)]="sort">
-            <mat-option value="name">Name</mat-option>
-            <mat-option value="price">Price</mat-option>
-        </mat-select>
-    </mat-form-field>
-</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Recursive:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+
 
 <div class="items">
-    <div class="item">
-        <div class="item-thumb-container">
-            <img src="https://preview.pngtab.com/8/21/23/twAix6rRA3/notepad-ico-iwork-grass-green.jpg" alt="Thumbnail" class="item-thumbnail">
+    <ng-container *ngFor="let obj of item">
+        <div class="item" (click)="openItemDetails(obj.name)">
+            <div class="item-name">
+                <p class="item-name">{{ obj.name }}</p>
+            </div>
+            <div class="item-description">
+                <p class="item-description">{{ obj.description }}</p>
+            </div>
+            <div class="item-price">
+                <p class="item-price">Price: ${{ obj.price }}</p>
+            </div>
         </div>
-        <div class="item-whole-description">
-            <p class="item-name">Name</p>
-            
-        </div>
-    </div>
+    </ng-container>
 </div>
 
-<div>
-    <table id="items">
-        <tr>
-            <th *ngFor="let column of headers">
-                {{ column }}
-            </th>
-        </tr>
-
-        <tr *ngFor="let row of item">
-            <td *ngFor="let column of headers">
-                {{ row }}
-            </td>
-        </tr>
-        
-    </table>
-</div>

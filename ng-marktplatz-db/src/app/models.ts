@@ -1,4 +1,4 @@
-//Main Interfaces
+//Main Classes
 
 export class Items{
     id: number; 

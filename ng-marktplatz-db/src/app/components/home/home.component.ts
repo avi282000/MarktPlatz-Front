@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Items, Users } from 'src/app/models';
 import { RestService } from 'src/app/services/rest.service';
 
@@ -9,11 +10,11 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class HomeComponent implements OnInit {
   public sort!: string; //Sorting By Properties of Items
-  constructor(private rs: RestService) { 
+  constructor(private rs: RestService, private router: Router) { 
     
   }
 
-  headers = ["Recieved Data"]
+  headers = ["id", "name", "price", "barcode", "description"]
 
   item: Items[] = [];
 
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit {
       (response) =>
       {
         this.item = response;
+        console.log(this.item);
       },
       (error) =>
       {
@@ -31,6 +33,10 @@ export class HomeComponent implements OnInit {
       }
     )
     
+  }
+
+  openItemDetails(name: string): void {
+    this.router.navigate(['details', name]);
   }
 
 }
