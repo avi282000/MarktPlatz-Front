@@ -1,4 +1,4 @@
-<div class="search-container">
+<div class="search-container" @slideInOut>
     <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <span class="logo" routerLink="/">Der MarktPlatz</span>
         <input class="search-input" name="search" ngModel placeholder="Search the Marketplace">

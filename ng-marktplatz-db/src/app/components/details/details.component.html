@@ -7,18 +7,18 @@
 
 <div class="details">
     <div class="item-banner">
-        <img class="item-img" 
-        src="https://img.freepik.com/free-vector/construction-with-black-yellow-stripes_1017-30755.jpg?size=626&ext=jpg"
-        alt="Image"
-        />
+        
     </div>
     <div class="item-content">
         <div class="details-wrapper">
-            <div class="item-header">
-                <h1 class="item-header-title">Name</h1>
-                <h2 class="item-header-price">Price:$</h2>
-                <h1 class="item-header-description">Description</h1>
-            </div>
+            <ng-container *ngFor="let obj of item">
+                <div class="item-header" *ngIf="obj.id==getId()" @fade>
+                    <h1 class="item-header-title">{{ obj.name }}</h1>
+                    <h2 class="item-header-price">Price: ${{ obj.price }}</h2>
+                    <h1 class="item-header-description">{{ obj.description }}</h1>
+                </div>
+            </ng-container>
+            <app-item-tabs></app-item-tabs>
         </div>
     </div>
 </div>

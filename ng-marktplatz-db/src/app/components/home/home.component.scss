@@ -69,12 +69,15 @@
     &-description{
         color: #1a81bd;
         text-align: center;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
         font-size: 36px;
         font-weight: 800;
         font-family: 'Edwardian Script ITC';
         line-height: normal;
         display: flex;
-        width: 280px;
+        width: 250px;
         height: 157px;
     }
 

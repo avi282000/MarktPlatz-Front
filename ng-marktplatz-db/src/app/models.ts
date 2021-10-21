@@ -15,18 +15,3 @@ export class Items{
         this.description = description;
     }
 }
-
-export class Users{
-    user_id: number; 
-    username: string;
-    email: string;
-    wallet: string;
-
-    constructor(id: number, username: string, email: string, wallet: string){
-        this.user_id = id;
-        this.username = username;
-        this.email = email;
-        this.wallet = wallet;
-
-    }
-}

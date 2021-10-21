@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { animate, group, state, style, transition, trigger } from '@angular/animations';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Items, Users } from 'src/app/models';
+import { Subscription } from 'rxjs';
+import { Items } from 'src/app/models';
 import { RestService } from 'src/app/services/rest.service';
 
+export var item_id: number;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    trigger('fade', [ 
+      transition(':enter', [
+        style({ opacity: 0 }), 
+        animate(1000, style({opacity: 1}))
+      ]) 
+    ]),
+  ]
+
 })
-export class HomeComponent implements OnInit {
+
+export class HomeComponent implements OnInit, OnDestroy {
   public sort!: string; //Sorting By Properties of Items
+  private itemSub: Subscription = new Subscription;
   constructor(private rs: RestService, private router: Router) { 
     
   }
@@ -17,10 +31,9 @@ export class HomeComponent implements OnInit {
   headers = ["id", "name", "price", "barcode", "description"]
 
   item: Items[] = [];
-
   ngOnInit(): void {
 
-    this.rs.readItems()
+    this.itemSub = this.rs.readItems()
     .subscribe(
       (response) =>
       {
@@ -35,8 +48,15 @@ export class HomeComponent implements OnInit {
     
   }
 
-  openItemDetails(name: string): void {
-    this.router.navigate(['details', name]);
+  openItemDetails(id: number): void {
+    item_id=id;
+    this.router.navigate(['details', id]);
+    
   }
 
+  ngOnDestroy(): void{
+    this.itemSub.unsubscribe;
+  }
+
+  
 }

@@ -8,12 +8,12 @@
 
 <div class="items">
     <ng-container *ngFor="let obj of item">
-        <div class="item" (click)="openItemDetails(obj.name)">
+        <div class="item" (click)="openItemDetails(obj.id)" @fade>
             <div class="item-name">
                 <p class="item-name">{{ obj.name }}</p>
             </div>
             <div class="item-description">
-                <p class="item-description">{{ obj.description }}</p>
+                <p class="item-description" >{{ obj.description }}</p>
             </div>
             <div class="item-price">
                 <p class="item-price">Price: ${{ obj.price }}</p>
