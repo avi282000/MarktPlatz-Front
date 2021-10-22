@@ -8,7 +8,7 @@
 
 <div class="items">
     <ng-container *ngFor="let obj of item">
-        <div class="item" (click)="openItemDetails(obj.id)" @fade>
+        <div class="item" (click)="openItemDetails(obj.id, obj.image)" @fade>
             <div class="item-name">
                 <p class="item-name">{{ obj.name }}</p>
             </div>

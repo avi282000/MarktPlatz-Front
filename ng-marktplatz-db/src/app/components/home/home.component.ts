@@ -6,6 +6,7 @@ import { Items } from 'src/app/models';
 import { RestService } from 'src/app/services/rest.service';
 
 export var item_id: number;
+export var item_img: string;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -48,7 +49,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     
   }
 
-  openItemDetails(id: number): void {
+  openItemDetails(id: number,img:string): void {
+    item_img=img;
     item_id=id;
     this.router.navigate(['details', id]);
     

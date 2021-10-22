@@ -1,1 +1,14 @@
-<p>item-tabs works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+<div class = "item-tabs" *ngFor="let obj of item">
+    <mat-tab-group mat-align-tabs="start" backgroundColor="primary" *ngIf="obj.id==getId()">
+        <mat-tab label="About">
+            <p class="item-tabs-description">{{obj.description}}</p>
+        </mat-tab>
+        <mat-tab label="Images">
+            <img class="item-tabs-images" src="{{ obj.image }}" alt="{{ obj.name }}">
+        </mat-tab>
+    </mat-tab-group>
+</div>

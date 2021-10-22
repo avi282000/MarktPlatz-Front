@@ -1,0 +1,23 @@
+.item{
+    
+    &-tabs{
+        color: #ffffff;
+        text-align: center;
+        padding: 10px;
+
+        ::ng-deep .mat-tab-labels{
+            justify-content: center;
+        }
+
+        &-description{
+            font-family: 'Oswald', sans-serif;
+            font-size: large;
+            padding: 20px;
+        }
+
+        &-images{
+            margin-top: 5px;
+            width: calc(100% - 10px)
+        }
+    }
+}

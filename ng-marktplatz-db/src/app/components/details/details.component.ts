@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Items } from 'src/app/models';
 import { RestService } from 'src/app/services/rest.service';
-import { item_id } from '../home/home.component';
+import { item_id, item_img } from '../home/home.component';
 
 @Component({
   selector: 'app-details',
@@ -41,6 +41,10 @@ export class DetailsComponent implements OnInit, OnDestroy{
       }
     )
     
+  }
+
+  getImg(): string{
+    return item_img
   }
 
   getId(): number{

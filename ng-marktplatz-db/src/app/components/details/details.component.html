@@ -7,12 +7,17 @@
 
 <div class="details">
     <div class="item-banner">
-        
+        <img 
+        class="item-img"
+        src="{{getImg()}}"
+        alt=" Something went wrong and the Background Image didn't load :("
+        >
     </div>
     <div class="item-content">
         <div class="details-wrapper">
             <ng-container *ngFor="let obj of item">
                 <div class="item-header" *ngIf="obj.id==getId()" @fade>
+                    
                     <h1 class="item-header-title">{{ obj.name }}</h1>
                     <h2 class="item-header-price">Price: ${{ obj.price }}</h2>
                     <h1 class="item-header-description">{{ obj.description }}</h1>
